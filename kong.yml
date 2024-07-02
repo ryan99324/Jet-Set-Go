@@ -1,0 +1,95 @@
+_format_version: "3.0"
+_transform: true
+
+
+services:
+  - name: search
+    url: http://manage_booking:5008/search
+    routes:
+      - name: search
+        paths:
+          - /api/v1/search
+        methods:
+          - POST
+          - OPTIONS
+        
+  - name: create-payment-intent
+    url: http://manage_booking:5008/payment
+    routes:
+      - name: create-payment-intent
+        paths:
+          - /api/v1/payment
+        methods:
+          - POST
+          - OPTIONS
+
+  - name: confirm-booking
+    url: http://manage_booking:5008/confirm_booking
+    routes:
+      - name: confirm-booking
+        paths:
+          - /api/v1/confirm_booking
+        methods:
+          - POST
+          - OPTIONS
+  
+  - name: hotel-management
+    url: http://manage_hotel:5010/delete_bookings
+    routes:
+      - name: hotel-management
+        paths:
+          - /api/v1/delete_booking
+        methods:
+          - DELETE
+          - OPTIONS
+
+  - name: get-routes
+    url: http://plan_route:5013/routes/get
+    routes:
+      - name: get-routes
+        paths:
+          - /api/v1/routes/get
+        methods:
+          - GET
+          - OPTIONS
+
+  - name: save-routes
+    url: http://plan_route:5013/routes/save
+    routes:
+      - name: save-routes
+        paths:
+          - /api/v1/routes/save
+        methods:
+          - PUT
+          - OPTIONS
+
+  - name: validate-location
+    url: http://plan_route:5013/validate-location
+    routes:
+      - name: validate-location
+        paths:
+          - /api/v1/validate_location
+        methods:
+          - POST
+          - OPTIONS
+
+  - name: calculate-distance
+    url: http://plan_route:5013/calculate-distance
+    routes:
+      - name: calculate-distance
+        paths:
+          - /api/v1/calculate_distance
+        methods:
+          - POST
+          - OPTIONS
+
+  - name: geocode
+    url: http://plan_route:5013/geocode
+    routes:
+      - name: geocode
+        paths:
+          - /api/v1/geocode
+        methods:
+          - POST
+          - OPTIONS
+
